@@ -189,7 +189,7 @@ function Set-PSLStoredKey {
 					Return
 				}
 
-				If ($KeyName -notin (Read-StoredKeyList) -or $Force) {
+				If ($KeyName -notin (Read-PSLStoredKeyList) -or $Force) {
 					Switch ( $Null ) {
 						{ $(-Not $Secret) -and $(-Not $SecureSecret) } {
 							$CurSecret = (Read-Host -AsSecureString -Prompt "Secret:")
